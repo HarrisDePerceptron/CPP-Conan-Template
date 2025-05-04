@@ -1,0 +1,49 @@
+
+# CMake build directory
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Conan
+conan.lock
+conanbuild/
+conan_export/
+*.conan
+
+# IDEs
+.vscode/
+.idea/
+
+# VSCode local settings
+*.code-workspace
+
+# Compiled binaries
+*.exe
+*.out
+*.a
+*.so
+*.dll
+*.dylib
+
+# Coverage
+coverage*
+*.gcda
+*.gcno
+*.gcov
+coverage-report/
+
+# Logs and temp
+*.log
+*.tmp
+
+# macOS
+.DS_Store
+
+# Backup/swap
+*~
+*.swp
+
+dist/
+.cache/*

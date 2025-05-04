@@ -1,0 +1,50 @@
+
+# Build outputs
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Conan cache/build artifacts
+*.conan
+conan.lock
+conan_export/
+conanbuild/
+
+# Coverage reports
+coverage*
+*.gcno
+*.gcda
+*.gcov
+coverage-report/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Editor/IDE metadata
+.vscode/
+.idea/
+*.code-workspace
+
+# MacOS
+.DS_Store
+
+# Git
+.git
+.gitignore
+
+# Binary outputs
+*.out
+*.exe
+*.a
+*.so
+*.dll
+*.dylib
+
+# Swap or backup
+*~
+*.swp
+
+dist/
