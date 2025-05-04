@@ -2,6 +2,7 @@
 nlohmann_json/3.11.2
 libcurl/8.5.0
 catch2/3.4.0
+crowcpp-crow/1.2.0
 
 [generators]
 CMakeDeps

@@ -1,30 +1,15 @@
-#include "HttpClient.hpp"
-#include <iostream>
+#include "crow.h"
 
-int main() {
-  HttpClient client;
+int main2();
 
-  try {
-    auto response = client.get("https://httpbin.org/get");
+int main()
+{
+  main2();
+    crow::SimpleApp app;
 
-    std::cout << "Status Code: " << response.status_code << "\n";
-    std::cout << "Body:\n" << response.body << "\n";
+    CROW_ROUTE(app, "/")([](){
+        return "Hello world";
+    });
 
-    auto json = client.getJson("https://httpbin.org/json");
-    std::cout << "Parsed Title: " << json["slideshow"]["title"] << "\n";
-  } catch (const std::exception &ex) {
-    std::cerr << "Request failed: " << ex.what() << "\n";
-  }
-
-  auto res = client.get("https://httpbin.org/headers");
-
-  std::cout << "Status: " << res.status_code << "\n";
-
-  for (const auto &[k, v] : res.response_headers)
-    std::cout << k << ": " << v << "\n";
-
-  for (const auto &[k, v] : res.request_headers)
-    std::cout << "[Sent] " << k << ": " << v << "\n";
-
-  return 0;
+    app.port(18080).run();
 }
