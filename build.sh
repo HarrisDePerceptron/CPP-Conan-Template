@@ -36,7 +36,6 @@ cd "$BUILD_DIR"
 cmake .. \
   -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake \
   -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_CXX_FLAGS_RELEASE="-O3 -DNDEBUG -static-libstdc++ -static-libgcc" \
   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON #-DCMAKE_EXE_LINKER_FLAGS="-static" \
 
 cmake --build .

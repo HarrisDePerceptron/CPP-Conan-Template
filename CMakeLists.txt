@@ -3,10 +3,22 @@ project(HttpClient LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+  message(STATUS "Applying secure Release flags")
 
+  # Compiler optimization and hardening flags
+  set(CMAKE_CXX_FLAGS_RELEASE
+        "-O3 -march=native -flto -DNDEBUG -fstack-protector-strong -D_FORTIFY_SOURCE=2"
+        CACHE STRING "Release compiler flags" FORCE
+    )
 
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG" CACHE STRING "" FORCE)
-
+  # Linker flags (for glibc security)
+  #set(CMAKE_EXE_LINKER_FLAGS_RELEASE
+  #       "-Wl,-z,relro,-z,now"
+  #       CACHE STRING "Release linker flags" FORCE
+  # )
+endif()
+message(STATUS "CXX FLAGS: ${CMAKE_CXX_FLAGS_RELEASE}")
 
 option(ENABLE_COVERAGE "Enable coverage reporting" OFF)
 
