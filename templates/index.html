@@ -7,30 +7,38 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body class="bg-gradient-to-br from-gray-100 to-blue-50 min-h-screen text-gray-800 font-sans">
+  <body class="bg-gradient-to-br from-[#0a0f1e] via-[#08101b] to-[#000000] min-h-screen text-gray-100 font-sans">
     <header class="text-center py-10">
-      <h1 class="text-4xl font-extrabold text-blue-600 tracking-tight">🚀 C++ Template Dashboard</h1>
-      <p class="text-sm text-gray-500 mt-2">Built with Crow 🦅 & Tailwind CSS 🌬️</p>
+      <h1 class="text-4xl font-extrabold text-blue-300 tracking-tight">🚀 C++ Template Dashboard</h1>
+      <p class="text-sm text-blue-400 mt-2">Built with Crow 🦅 & Tailwind CSS 🌬️</p>
     </header>
 
     <main class="flex justify-center px-4">
-      <div class="bg-white shadow-2xl rounded-xl p-8 w-full max-w-xl">
+      <div class="bg-[#1a2230] bg-opacity-90 shadow-2xl rounded-2xl p-8 w-full max-w-xl">
         <div class="mb-6">
-          <p class="text-lg font-medium text-gray-600">👋 Hello, <span class="text-gray-900 font-bold">{{name}}</span>!</p>
+          <p class="text-lg font-medium">
+            👋 Hello, <span class="text-white font-bold">{{name}}</span>!
+          </p>
         </div>
 
         <div class="space-y-4">
           <div class="flex items-center">
-            <span class="text-pink-600 text-xl mr-3">📡</span>
-            <p><span class="font-semibold">IP Address:</span> <span class="text-gray-700">{{ip}}</span></p>
+            <span class="text-pink-400 text-xl mr-3">📡</span>
+            <p>
+              <span class="font-semibold text-gray-200">IP Address:</span>
+              <span class="text-blue-200">{{ip}}</span>
+            </p>
           </div>
           <div class="flex items-center">
-            <span class="text-gray-700 text-xl mr-3">🔗</span>
-            <p><span class="font-semibold">MAC Address:</span> <span class="text-gray-700">{{mac}}</span></p>
+            <span class="text-teal-400 text-xl mr-3">🔗</span>
+            <p>
+              <span class="font-semibold text-gray-200">MAC Address:</span>
+              <span class="text-blue-200">{{mac}}</span>
+            </p>
           </div>
         </div>
 
-        <div class="mt-8 text-center text-xs text-gray-400">
+        <div class="mt-8 text-center text-xs text-blue-400">
           &copy; {{year}} – All rights reserved.
         </div>
       </div>
