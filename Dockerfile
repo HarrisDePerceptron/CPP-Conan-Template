@@ -13,8 +13,9 @@ RUN pip3 install --no-cache-dir --upgrade pip && \
 WORKDIR /app
 COPY . .
 
-RUN chmod +x build.sh run.sh
+RUN chmod +x build.sh run.sh run-test.sh
 RUN ./build.sh
+RUN ./run-test.sh
 
 # -------------------------------
 # Stage 2: Runtime
