@@ -5,13 +5,19 @@
 build and run
 
 ```
-./run.sh
+./scripts/run.sh
+# or
+./scripts/run.sh --debug
+# or 
+./scripts/run.sh --release
 ```
 
 build only
 
 ```
-./build.sh
+./scripts/build.sh
+./scripts/build.sh --debug 
+./scripts/build.sh --release
 ```
 
 ### Adding dependencies
@@ -32,7 +38,7 @@ This templates uses catch2 and ctest as the runner
 To run tests
 
 ```
-./run-test.sh
+./scripts/run-test.sh
 ```
 
 ### Docker

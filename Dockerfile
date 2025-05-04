@@ -13,9 +13,9 @@ RUN pip3 install --no-cache-dir --upgrade pip && \
 WORKDIR /app
 COPY . .
 
-RUN chmod +x build.sh run.sh run-test.sh
-RUN ./build.sh
-RUN ./run-test.sh
+RUN chmod +x scripts/build.sh scripts/run.sh scripts/run-test.sh
+RUN ./scripts/build.sh --release
+RUN ./scripts/run-test.sh
 
 # -------------------------------
 # Stage 2: Runtime
@@ -32,7 +32,9 @@ WORKDIR /home/appuser
 # Copy dist folder with binary
 COPY --from=builder /app/dist/ ./dist/
 
-RUN chmod +x ./dist/* 
+RUN chmod +x ./dist/Release/* 
 USER appuser
 
-CMD ["sh", "-c", "./dist/*"]
+WORKDIR /home/appuser/dist/Release
+
+CMD ["sh", "-c", "./*"]
