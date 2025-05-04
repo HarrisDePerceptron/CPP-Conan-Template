@@ -1,5 +1,7 @@
 ## CPP Conan Template
 
+![Index.png](public/imgs/index.png)
+
 ### Getting Started
 
 build and run
